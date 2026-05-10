@@ -1,10 +1,10 @@
 # terraform-blueprints (Terraform Blueprints)
 
-A multi-environment, multi-cloud Terraform framework that deploys cloud infrastracture (AWS, Azure) defined as modules and blueprints.
+A multi-environment, multi-cloud Terraform framework that deploys cloud infrastracture (AWS, Azure) defined as modules and blueprints. Blueprints are repeatable deployment definitions composed of multiple modules allowing repeatable deployment of a colleciton of cloud resources.
 
 ## Overview
 
-terraform-blueprints separates **what to deploy** (env_name/environment tfvars) from **how to deploy it** (blueprints and modules). Users select pre-built blueprints, set a few variables, and the framework handles networking, compute, databases, and cloud-specific wiring automatically — with sandbox, dev, test, prod environment-aware defaults.
+terraform-blueprints separates **what to deploy** (env_name/environment tfvars) from **how to deploy it** (blueprints and modules). Users select pre-built blueprints, set a few variables, and the framework handles networking, compute, databases, and cloud-specific wiring automatically — with dev, test, prod environment-aware defaults.
 
 ## Prerequisites
 
@@ -85,14 +85,14 @@ az storage container create \
 ### 3. Initialise and Plan
 
 ```bash
-./scripts/tf.sh customer/lumon dev australiaeast init
-./scripts/tf.sh customer/lumon dev australiaeast plan
+./scripts/tf.sh example/customer/lumon dev australiaeast init
+./scripts/tf.sh example/customer/lumon dev australiaeast plan
 ```
 
 ### 4. Apply
 
 ```bash
-./scripts/tf.sh customer/acme dev ap-southeast-2 apply
+./scripts/tf.sh example/customer/acme dev ap-southeast-2 apply
 ```
 
 ## Usage
@@ -110,10 +110,10 @@ az storage container create \
 
 **Examples:**
 ```bash
-./scripts/tf.sh customer/acme dev ap-southeast-2 plan
-./scripts/tf.sh customer/acme prod ap-southeast-2 apply
-./scripts/tf.sh customer/lumon test uksouth plan
-./scripts/tf.sh customer/acme prod ap-southeast-2 apply -auto-approve
+./scripts/tf.sh example/customer/acme dev ap-southeast-2 plan
+./scripts/tf.sh example/customer/acme prod ap-southeast-2 apply
+./scripts/tf.sh example/customer/lumon test uksouth plan
+./scripts/tf.sh example/customer/acme prod ap-southeast-2 apply -auto-approve
 ```
 
 The wrapper script handles:
