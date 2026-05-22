@@ -6,6 +6,10 @@ A multi-environment, multi-cloud Terraform framework that deploys cloud infrastr
 
 terraform-blueprints separates **what to deploy** (env_name/environment tfvars) from **how to deploy it** (blueprints and modules). Users select pre-built blueprints, set a few variables, and the framework handles networking, compute, databases, and cloud-specific wiring automatically — with dev, test, prod environment-aware defaults.
 
+## Acknowledgements
+
+Build with the assistance of AI.
+
 ## Prerequisites
 
 - [Terraform](https://developer.hashicorp.com/terraform/install) >= 1.5.0
